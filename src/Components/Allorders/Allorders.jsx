@@ -1,6 +1,7 @@
 import axios from "axios";
 import { jwtDecode } from "jwt-decode";
 import React, { useEffect, useState } from "react";
+import { Helmet } from "react-helmet";
 import Slider from "react-slick";
 
 export default function Allorders() {
@@ -29,11 +30,15 @@ export default function Allorders() {
   };
   return (
     <>
+      <Helmet>
+        <meta charSet="utf-8" />
+        <title>All Orders Page</title>
+        <link rel="canonical" href="http://mysite.com/example" />
+      </Helmet>
       <div className="container">
         <h1 className="text-main fw-bolder  my-5">All Orders</h1>
-        <div className="row g-4" >
-        {orders?.map((order) => (
-          
+        <div className="row g-4">
+          {orders?.map((order) => (
             <div className="col-md-4" key={order._id}>
               <div className="card">
                 <div className="card-body">
@@ -64,9 +69,8 @@ export default function Allorders() {
                   </Slider>
                 </div>
               </div>
-            
-          </div>
-        ))}
+            </div>
+          ))}
         </div>
       </div>
     </>

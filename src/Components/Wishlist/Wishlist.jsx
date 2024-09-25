@@ -2,6 +2,7 @@ import React, { useContext, useEffect, useState } from "react";
 import { wishlistContext } from "../Context/WishlistContext";
 import Loading from "../Loading/Loading";
 import { toast } from "react-toastify";
+import { Helmet } from "react-helmet";
 
 export default function Wishlist() {
   let { setCounter, getAllItemsFromWishlist, removeItemFromWishlist } =
@@ -39,6 +40,11 @@ export default function Wishlist() {
   if (loading) return <Loading />;
   return (
     <>
+    <Helmet>
+        <meta charSet="utf-8" />
+        <title>Wishlist Page</title>
+        <link rel="canonical" href="http://mysite.com/example" />
+      </Helmet>
       <div className="container bg-main-light my-5 ">
         <h1 className=" my-5 text-center p-2">Wishlist</h1>
         {wishlistData?.data?.map((wishlistItem) => (

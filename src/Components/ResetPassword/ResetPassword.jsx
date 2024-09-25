@@ -4,6 +4,7 @@ import React, { useState } from 'react'
 import { useNavigate } from 'react-router-dom'
 import { toast } from 'react-toastify'
 import Loading from '../Loading/Loading'
+import { Helmet } from 'react-helmet'
 
 export default function ResetPassword() {
     let[errMsg,setErrMsg]=useState('')
@@ -40,6 +41,11 @@ export default function ResetPassword() {
     if(loading)<Loading/>
   return (
     <>
+    <Helmet>
+        <meta charSet="utf-8" />
+        <title>Reset Password Page</title>
+        <link rel="canonical" href="http://mysite.com/example" />
+      </Helmet>
     <div className="container my-5">
     <h2 className="text-main fw-bolder">Reset Password </h2>
     {errMsg? <div className="alert alert-danger my-2" role="alert">

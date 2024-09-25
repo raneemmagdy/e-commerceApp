@@ -4,6 +4,7 @@ import Loading from "../Loading/Loading";
 import { toast } from "react-toastify";
 import { Link } from "react-router-dom";
 import cart from '../../assets/images/preview.png'
+import { Helmet } from "react-helmet";
 
 export default function Cart() {
   let {clearCart, getCart, setCounter,deleteCartItem ,updateCartItemsQuantity} = useContext(cartContext);
@@ -67,6 +68,12 @@ export default function Cart() {
     </div></>
   return (
     <>
+
+<Helmet>
+        <meta charSet="utf-8" />
+        <title>Cart Page</title>
+        <link rel="canonical" href="http://mysite.com/example" />
+      </Helmet>
       <div className="container bg-main-light p-3 my-5 ">
         <h2>Shop Cart </h2>
         <p className="text-main fw-bolder">

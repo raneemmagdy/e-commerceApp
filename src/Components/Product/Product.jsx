@@ -6,6 +6,7 @@ import { Link } from "react-router-dom";
 import { cartContext } from "../Context/CartContext";
 import { toast } from "react-toastify";
 import { wishlistContext } from "../Context/WishlistContext";
+import { Helmet } from "react-helmet";
 
 export default function Product({ products }) {
   let {counter:wishListCounter,setCounter:setwishlistCounter,AddItemToWishlist} = useContext(wishlistContext);
@@ -52,6 +53,11 @@ export default function Product({ products }) {
 
   return (
     <>
+     <Helmet>
+        <meta charSet="utf-8" />
+        <title>Product Page</title>
+        <link rel="canonical" href="http://mysite.com/example" />
+      </Helmet>
       <div className="col-md-3">
         <div className="card product cursor-pointer">
           <Link to={"/productDetails/" + products._id}>

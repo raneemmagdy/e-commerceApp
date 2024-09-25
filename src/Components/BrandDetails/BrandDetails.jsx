@@ -1,5 +1,6 @@
 import axios from "axios";
 import React, { useEffect, useState } from "react";
+import { Helmet } from "react-helmet";
 import { useParams } from "react-router-dom";
 
 export default function BrandDetails() {
@@ -23,6 +24,14 @@ export default function BrandDetails() {
   }, []);
   return (
     <>
+
+
+
+<Helmet>
+        <meta charSet="utf-8" />
+        <title>Brand Details Page</title>
+        <link rel="canonical" href="http://mysite.com/example" />
+      </Helmet>
       <div className="cursor-pointer brandDetails-card m-auto my-5 p-4 shadow-lg rounded">
         <div className="brand-image-container text-center">
           <img

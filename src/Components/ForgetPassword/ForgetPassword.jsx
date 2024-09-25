@@ -5,6 +5,7 @@ import { useNavigate } from "react-router-dom";
 import { toast } from "react-toastify";
 import * as Yup from "yup";
 import Loading from "../Loading/Loading";
+import { Helmet } from "react-helmet";
 export default function ForgetPassword() {
   let navigate = useNavigate();
   let [errMsg, setErrMsg] = useState(false);
@@ -45,6 +46,11 @@ export default function ForgetPassword() {
   if(loading)return<Loading/>
   return (
     <>
+     <Helmet>
+        <meta charSet="utf-8" />
+        <title>ForgetPassword Page</title>
+        <link rel="canonical" href="http://mysite.com/example" />
+      </Helmet>
       <div className="container my-5">
         {}
         <form onSubmit={forgetPassword.handleSubmit}>

@@ -5,6 +5,7 @@ import Slider from "react-slick";
 import Loading from "../Loading/Loading";
 import { cartContext } from "../Context/CartContext";
 import { toast } from "react-toastify";
+import { Helmet } from "react-helmet";
 
 export default function ProductDetails() {
  let {counter,setCounter,addToCart}=useContext(cartContext)
@@ -55,6 +56,11 @@ export default function ProductDetails() {
   };
   return (
     <>
+    <Helmet>
+        <meta charSet="utf-8" />
+        <title>Product Details Page</title>
+        <link rel="canonical" href="http://mysite.com/example" />
+      </Helmet>
       <div className="container  m-auto my-5">
         <div className="row">
         <div className="col-md-4">
@@ -76,7 +82,7 @@ export default function ProductDetails() {
           </div>
         </div>
         <button
-              className="btn  bg-main text-white "
+              className="btn  bg-main text-white w-100 "
               onClick={() => addProductToCart(product._id)}
               disabled={loadingBtn}
             >

@@ -1,9 +1,15 @@
 import React from 'react'
+import { Helmet } from 'react-helmet'
 import { Link } from 'react-router-dom'
 
 export default function Category({categories}) {
   return (
     <>
+     <Helmet>
+        <meta charSet="utf-8" />
+        <title>Category Page</title>
+        <link rel="canonical" href="http://mysite.com/example" />
+      </Helmet>
      <div className="col-md-4">
     <Link to={'/categoryDetails/'+categories._id}>
    

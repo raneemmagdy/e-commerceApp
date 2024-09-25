@@ -2,6 +2,7 @@ import axios from 'axios'
 import React, { useEffect, useState } from 'react'
 import { useParams } from 'react-router-dom'
 import Loading from '../Loading/Loading'
+import { Helmet } from 'react-helmet'
 
 export default function CategoryDetails() {
    let id=useParams()
@@ -28,7 +29,11 @@ getSpecificCategory()
     if(loading)return<Loading/>
   return (
     <>
-    
+     <Helmet>
+        <meta charSet="utf-8" />
+        <title>Category Details Page</title>
+        <link rel="canonical" href="http://mysite.com/example" />
+      </Helmet>
     <div className="category-card m-auto my-5">
   <div className="category-image-container">
     <img src={category.image} alt="{category.name}" className="category-image" />

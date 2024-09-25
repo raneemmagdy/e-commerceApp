@@ -4,6 +4,7 @@ import React, { useState } from 'react'
 import {  useNavigate } from 'react-router-dom'
 import { toast } from 'react-toastify'
 import Loading from '../Loading/Loading'
+import { Helmet } from 'react-helmet'
 
 export default function VerifyResetCode() {
     let[errMsg,setErrMsg]=useState('')
@@ -36,6 +37,13 @@ export default function VerifyResetCode() {
     if(loading)<Loading/>
   return (
     <>
+
+
+<Helmet>
+        <meta charSet="utf-8" />
+        <title>Verify Code Page</title>
+        <link rel="canonical" href="http://mysite.com/example" />
+      </Helmet>
     <div className="container my-5">
     <h2 className="text-main fw-bolder">Enter Verify Code </h2>
     {errMsg? <div className="alert alert-danger my-2" role="alert">

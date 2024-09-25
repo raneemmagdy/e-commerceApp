@@ -1,6 +1,7 @@
 import axios from "axios";
 import { useFormik } from "formik";
 import React, { useState } from "react";
+import { Helmet } from "react-helmet";
 import { Watch } from "react-loader-spinner";
 import { Link, useNavigate } from "react-router-dom";
 import { toast } from "react-toastify";
@@ -51,7 +52,14 @@ export default function Signin() {
     validationSchema,
   });
   return (
-    <div className="m-auto w-75 my-5">
+   <>
+   <Helmet>
+        <meta charSet="utf-8" />
+        <title>SignIn Page</title>
+        <link rel="canonical" href="http://mysite.com/example" />
+      </Helmet>
+   
+   <div className="m-auto w-75 my-5">
       <h2>Log In</h2>
       {errMsg!==''?<div className="alert alert-danger my-2" role="alert">
   {errMsg}
@@ -124,5 +132,7 @@ export default function Signin() {
         )}
       </form>
     </div>
+   
+   </>
   );
 }

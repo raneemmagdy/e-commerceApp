@@ -1,6 +1,7 @@
 import axios from "axios";
 import { useFormik } from "formik";
 import { useState } from "react";
+import { Helmet } from "react-helmet";
 import {  Watch } from "react-loader-spinner";
 import { useNavigate } from "react-router-dom";
 
@@ -66,6 +67,12 @@ export default function Signup() {
 
   console.log(register.errors);
   return (
+   <>
+   <Helmet>
+        <meta charSet="utf-8" />
+        <title>SignUp Page</title>
+        <link rel="canonical" href="http://mysite.com/example" />
+      </Helmet>
     <div className="my-5 w-75 m-auto">
       <h2>Register</h2>
       {errMsg !== "" ? (
@@ -194,5 +201,9 @@ export default function Signup() {
         )}
       </form>
     </div>
+   
+   
+   
+   </>
   );
 }

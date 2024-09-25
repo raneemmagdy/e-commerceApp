@@ -11,8 +11,6 @@ import Wishlist from "./Components/Wishlist/Wishlist";
 import Authlayout from "./Components/Layout/Authlayout";
 import Signin from "./Components/Signin/Signin";
 import Signup from "./Components/Signup/Signup";
-import { Offline, Online } from "react-detect-offline";
-import offline from "../src/assets/images/offline.jpg";
 import ProtectedRoute from "./Components/ProtectedRoute/ProtectedRoute";
 import ProductDetails from "./Components/ProductDetails/ProductDetails";
 import CategoryDetails from "./Components/CategoryDetails/CategoryDetails";
@@ -68,7 +66,7 @@ export default function App() {
   ]);
   return (
     <>
-      <Online>
+     
        <CartContextProvider>
        <WishlistContextProvider>
         <RouterProvider router={routes} />
@@ -76,13 +74,9 @@ export default function App() {
       
        </CartContextProvider>
       
-      </Online>
+      
       <ToastContainer theme="dark"  autoClose={1000}/>
-      <Offline>
-        <div className="offline d-flex align-items-center justify-content-center">
-          <img src={offline} alt="offline" />
-        </div>
-      </Offline>
+     
     </>
   );
 }
